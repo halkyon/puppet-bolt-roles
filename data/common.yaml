@@ -2,6 +2,6 @@
 php::globals::php_version: "7.3"
 
 web::vhosts:
-  test:
-    docroot: "/var/www/test"
+  localhost:
+    docroot: "/var/www/test/public"
 

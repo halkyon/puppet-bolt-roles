@@ -1,5 +1,5 @@
 class web::php {
-  class { '::php':
+  class { 'php':
     composer   => false,
     dev        => false,
     fpm        => true,
@@ -10,7 +10,6 @@ class web::php {
       gd       => {},
       intl     => {},
       mbstring => {},
-      mysqlnd  => {},
       xml      => {},
       zip      => {},
     }
