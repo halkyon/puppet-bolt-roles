@@ -1,4 +1,9 @@
-class web::php {
+class web::php(
+  $php_version,
+) {
+  class { 'php::globals':
+    php_version => $php_version,
+  } ->
   class { 'php':
     composer   => false,
     dev        => false,
