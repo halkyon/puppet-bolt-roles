@@ -1,8 +1,8 @@
 plan role::web(
-  TargetSpec $nodes,
+  TargetSpec $targets,
 ) {
-  $nodes.apply_prep
-  apply($nodes) {
+  $targets.apply_prep
+  apply($targets) {
     include profile::base
     include profile::web
   }

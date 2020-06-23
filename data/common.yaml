@@ -1,6 +1,6 @@
 ---
-web::php::php_version: "7.3"
+web::php::php_version: "7.4"
 
 web::vhosts:
   localhost:
-    docroot: "/var/www/test/public"
+    docroot: "/var/www/test"

@@ -1,10 +1,10 @@
 class web::php(
   $php_version,
 ) {
-  class { 'php::globals':
+  class { '::php::globals':
     php_version => $php_version,
   } ->
-  class { 'php':
+  class { '::php':
     composer   => false,
     dev        => false,
     fpm        => true,

@@ -4,15 +4,16 @@ Experimenting using Puppet Bolt plans to apply a role, in a similar way to Ansib
 
 ## Usage
 
-Assuming Debian or Ubuntu, install the latest Puppet 6 release. In this case, for Debian "stretch":
+See [Installing Bolt docs](https://puppet.com/docs/bolt/latest/bolt_installing.html#install-bolt-on-debian-or-ubuntu).
 
-	wget https://apt.puppetlabs.com/puppet6-release-stretch.deb
-	sudo dpkg -i puppet6-release-stretch.deb
-	apt update
-	apt install puppet-bolt
+Setup a test container:
 
-Now in the working directory of this repository, to apply the "web" role to localhost:
+	docker-compose up -d
+
+Get all necessary module dependencies:
 
 	bolt puppetfile install
-	bolt plan run role::web --verbose nodes=localhost
 
+Apply the "web" role to the container target:
+
+	bolt plan run role::web -t localhost:2000 --verbose -u root -p root --no-host-key-check
